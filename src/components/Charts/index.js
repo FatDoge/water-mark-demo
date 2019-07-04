@@ -18,7 +18,7 @@ class Charts extends Component {
       }, () => watermark({
         content: data.uid,
         width: '100%',
-        height: '50',
+        height: '80',
         rotate: '17',
         textBaseline: 'bottom', // 必须
         textAlign: 'start', // 必须

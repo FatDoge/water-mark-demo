@@ -38,7 +38,7 @@ const watermark = ({
     ctx.font = font;
     ctx.fillStyle = fillStyle;
     ctx.rotate(Math.PI / 180 * rotate);
-    ctx.fillText(content, parseFloat(width) / 2, parseFloat(height) / 2);
+    ctx.fillText(content, 20, parseFloat(height) / 2);
 
     const base64Url = canvas.toDataURL();
     const __wm = document.querySelector('.__wm');
