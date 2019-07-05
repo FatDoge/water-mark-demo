@@ -11,7 +11,12 @@ import EnhancerWaterMark from 'watermark-enhancer'
     return uid
   }
 }*/
-
+@EnhancerWaterMark({
+  content: 'test',
+  width: '100',
+  height: '80',
+  rotate: '17',
+})
 class Charts extends Component {
 
   state = {
@@ -57,9 +62,4 @@ class Charts extends Component {
   }
 }
 
-export default EnhancerWaterMark({
-  content: 'test',
-  width: '100',
-  height: '80',
-  rotate: '17',
-})(Charts)
+export default Charts
