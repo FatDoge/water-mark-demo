@@ -22,7 +22,7 @@ const watermark = ({
     textBaseline = 'bottom',
     font = "20px Microsoft Yahei",
     fillStyle = 'rgba(184, 184, 184, 0.4)',
-    content = '泰隆银行',
+    content = 'loading',
     rotate = '24',
     zIndex = 1000,
 } = {}, ...res) => {

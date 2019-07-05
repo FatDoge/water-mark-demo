@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
-import watermark from '@/components/WaterMark'
 import F2 from '@antv/f2'
 import { fetchCurrentUser } from '@/service/api'
+import EnhancerWaterMark from '../EnhancerWaterMark/index'
 
+const renderEffectContent = async () => {
+  const { success, results: { data } } = await fetchCurrentUser();
+  if (success) {
+    const { uid } = data
+    return uid
+  }
+}
 class Charts extends Component {
 
   state = {
@@ -13,14 +20,9 @@ class Charts extends Component {
     const { success, results: { data } } = await fetchCurrentUser();
     if (success) {
       console.log(data)
-      this.setState({
+      this.setState({ 
         currentUser: data,
-      }, () => watermark({
-        content: data.uid,
-        width: '100',
-        height: '80',
-        rotate: '17',
-      }))
+      })
     }
   }
 
@@ -45,12 +47,16 @@ class Charts extends Component {
   }
 
   render() {
-    return <canvas 
-      id="myChart" 
-      width={document.documentElement.clientWidth} 
-      height={document.documentElement.clientHeight} 
-    />
+    return <canvas
+        id="myChart"
+        width={document.documentElement.clientWidth}
+        height={document.documentElement.clientHeight}
+      />
   }
 }
 
-export default Charts
+export default EnhancerWaterMark({
+  width: '100',
+  height: '80',
+  rotate: '17',
+}, true, renderEffectContent)(Charts)

@@ -1,0 +1,20 @@
+{
+  "name": "watermark-enhancer",
+  "version": "1.0.4",
+  "description": "add watermark to components in a more elegant way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "enhancer",
+    "react",
+    "watermark",
+    "hoc"
+  ],
+  "author": "fatdoge",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.0"
+  }
+}
