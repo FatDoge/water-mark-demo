@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import F2 from '@antv/f2'
-import { fetchCurrentUser } from '@/service/api'
-import EnhancerWaterMark from '../EnhancerWaterMark/index'
+//import { fetchCurrentUser } from '@/service/api'
+import EnhancerWaterMark from 'watermark-enhancer'
 
-const renderEffectContent = async () => {
+// your async function return the content data.
+/*const renderEffectContent = async () => {
   const { success, results: { data } } = await fetchCurrentUser();
   if (success) {
     const { uid } = data
     return uid
   }
-}
+}*/
+
 class Charts extends Component {
 
   state = {
     currentUser: {}
   }
 
-  renderUserData = async () => {
+  /*renderUserData = async () => {
     const { success, results: { data } } = await fetchCurrentUser();
     if (success) {
       console.log(data)
@@ -24,10 +26,10 @@ class Charts extends Component {
         currentUser: data,
       })
     }
-  }
+  }*/
 
   componentDidMount() {
-    this.renderUserData()
+    /*this.renderUserData()*/
     const data = [
       { genre: 'Sports', sold: 275 },
       { genre: 'Strategy', sold: 115 },
@@ -56,7 +58,8 @@ class Charts extends Component {
 }
 
 export default EnhancerWaterMark({
+  content: 'test',
   width: '100',
   height: '80',
   rotate: '17',
-}, true, renderEffectContent)(Charts)
+})(Charts)

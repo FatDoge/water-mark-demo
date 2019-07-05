@@ -1,1 +1,1 @@
-export const API_URL = 'https://api.fatdoge.cn/'
+export const API_URL = 'your_api_url'

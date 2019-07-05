@@ -2,7 +2,8 @@
   "name": "watermark-enhancer",
   "version": "1.0.4",
   "description": "add watermark to components in a more elegant way",
-  "main": "index.js",
+  "main": "/dist/index.js",
+  "files": ["dist"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
