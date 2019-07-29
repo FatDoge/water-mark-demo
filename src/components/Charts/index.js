@@ -1,21 +1,25 @@
 import React, { Component } from 'react'
 import F2 from '@antv/f2'
-//import { fetchCurrentUser } from '@/service/api'
+import { fetchCurrentUser } from '@/service/api'
 import EnhancerWaterMark from 'watermark-enhancer'
 
 // your async function return the content data.
-/*const renderEffectContent = async () => {
+const renderEffectContent = async () => {
   const { success, results: { data } } = await fetchCurrentUser();
   if (success) {
     const { uid } = data
     return uid
   }
-}*/
+}
 @EnhancerWaterMark({
-  content: 'test',
+  asyncContent: renderEffectContent, // or sync content: 'test',
   width: '100',
   height: '80',
   rotate: '17',
+}, {
+  color: 'red',
+  background: 'black',
+  content: '泰隆水印加载中',
 })
 class Charts extends Component {
 
@@ -23,18 +27,8 @@ class Charts extends Component {
     currentUser: {}
   }
 
-  /*renderUserData = async () => {
-    const { success, results: { data } } = await fetchCurrentUser();
-    if (success) {
-      console.log(data)
-      this.setState({ 
-        currentUser: data,
-      })
-    }
-  }*/
 
   componentDidMount() {
-    /*this.renderUserData()*/
     const data = [
       { genre: 'Sports', sold: 275 },
       { genre: 'Strategy', sold: 115 },
